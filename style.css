@@ -1,0 +1,11 @@
+.container {
+    height: 500px;
+    width: 500px;
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+}
+
+.square {
+    background-color: lightskyblue;
+}
