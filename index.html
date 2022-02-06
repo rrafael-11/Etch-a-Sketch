@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="left">
+      <button class="clear-grid-button" id="clearGridButton">Clear Grid</button>
+      <input type="range" name="grid" class="set-grid-input" id="setGridInput"/>
     </div>
-</body>
-<script src="script.js"></script>
+    <div class="container"></div>
+    <div class="right">
+      <input type="color" name="color" class="color-input" id="colorInput" />
+      <button class="rainbow-mode-button" id="rainbowModeButton"  />Rainbow Mode</button>
+    </div>
+  </body>
+  <script src="script.js"></script>
 </html>
