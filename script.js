@@ -24,6 +24,12 @@ function resetGrid() {
   }
 }
 
+function clearGrid() {
+  squares().forEach((square) => {
+    square.style.backgroundColor = '#fff'
+  })
+}
+
 function updateGridText() {
   return (currentGridTxt.textContent = `${gridSize()}x${gridSize()}`);
 }
