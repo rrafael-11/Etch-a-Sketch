@@ -15,8 +15,10 @@ body {
 
 .container {
   background-color: #fff;
+  border: 2px solid hsl(203, 92%, 90%);
+  box-shadow: 12px 12px 10px 2px hsl(203, 92%, 60%);
   height: 625px;
-  width: 600px;
+  width: 625px;
   margin-right: 150px;
   display: grid;
   grid-template-columns: repeat(16, 1fr);
