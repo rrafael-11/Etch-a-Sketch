@@ -14,10 +14,12 @@
     </div>
     <div class="input-section">
       <div class="input-container" id="input-range-container">
-        <input type="range" name="gridSize" class="set-grid-input" id="setGridInput" value="16" min="4" max="32"/>
+        <span class="current-grid" id="currentGridTxt">16x16</span>
+        <input type="range" name="gridSize" class="input-range" id="gridSize" value="16" min="4" max="32"/>
       </div>
       <div class="input-container" id="input-color-container">
-        <input type="color" name="color" class="set-color-input" id="setColorInput" />
+        <span class="current-color" id="currentColorTxt">Black</span>
+        <input type="color" name="color" class="input-color" id="inputColor" />
       </div>
       <button class="clear-grid-button" id="clearGridButton">Clear Grid</button>
       <button class="rainbow-mode-button" id="rainbowModeButton">Rainbow Mode</button>
