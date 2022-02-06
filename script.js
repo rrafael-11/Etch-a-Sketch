@@ -4,6 +4,15 @@ let currentGridTxt = document.querySelector("#currentGridTxt");
 let squares = () => { return document.querySelectorAll(".square"); };
 let gridSize = () => { return document.querySelector("#gridSize").value; };
 let inputColor = () => { return document.querySelector("#inputColor").value; };
+let randomColor = () => {
+  let num1 = Math.floor(Math.random() * 253)
+  let num2 = Math.floor(Math.random() * 253)
+  let num3 = Math.floor(Math.random() * 253)
+
+  return `rgb(${num1}, ${num2}, ${num3})`
+}
+let isRainbowModeOn = false
+let currentColor = () => {return isRainbowModeOn ? randomColor() : inputColor()}
 
 updateGrid(gridSize());
 
@@ -30,18 +39,22 @@ function clearGrid() {
   })
 }
 
+function rainbowMode() {
+  isRainbowModeOn = !isRainbowModeOn
+}
+
 function updateGridText() {
   return (currentGridTxt.textContent = `${gridSize()}x${gridSize()}`);
 }
 
-function changeSquareColor(e) {
-  return (e.target.style.backgroundColor = inputColor());
+function changeSquareColor(e, color) {
+  return e.target.style.backgroundColor = color;
 }
 
 container.addEventListener("mouseenter", () => {
   squares().forEach((square) => {
-    square.addEventListener("mousemove", (e) => {
-      changeSquareColor(e);
+    square.addEventListener("mouseenter", (e) => {
+      changeSquareColor(e, currentColor());
     });
   });
 });
