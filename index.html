@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="left">
-      <div class="title">
-        <h1>Etch a Sketch</h1>
-      </div>
-      <div class="input-section">
-        <button class="clear-grid-button" id="clearGridButton">Clear Grid</button>
-        <input type="range" name="grid" class="set-grid-input" id="setGridInput"/>
-        <input type="color" name="color" class="set-color-input" id="setColorInput" />
-        <button class="rainbow-mode-button" id="rainbowModeButton"  />Rainbow Mode</button>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="left">
+    <div class="title">
+      <h1>Etch a Sketch</h1>
     </div>
-    <div class="container"></div>
-  </body>
-  <script src="script.js"></script>
+    <div class="input-section">
+      <div class="input-container" id="input-range-container">
+        <input type="range" name="gridSize" class="set-grid-input" id="setGridInput" value="16" min="4" max="32"/>
+      </div>
+      <div class="input-container" id="input-color-container">
+        <input type="color" name="color" class="set-color-input" id="setColorInput" />
+      </div>
+      <button class="clear-grid-button" id="clearGridButton">Clear Grid</button>
+      <button class="rainbow-mode-button" id="rainbowModeButton">Rainbow Mode</button>
+    </div>
+  </div>
+  <div class="container"></div>
+</body>
+<script src="script.js"></script>
 </html>
