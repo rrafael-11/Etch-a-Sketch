@@ -1,4 +1,7 @@
 let container = document.querySelector(".container");
+let squares = () => {return document.querySelectorAll('.square')}
+let inputColor = () => {return document.querySelector('#inputColor').value}
+
 
 function generateSquares() {
   for (var i = 0; i < 16 * 16; i++) {
@@ -11,9 +14,9 @@ function generateSquares() {
 generateSquares();
 
 function changeSquareColor(e) {
-  e.target.style.backgroundColor = "black";
+  e.target.style.backgroundColor = inputColor();
 }
 
-container.addEventListener("mousemove", (e) => {
-  changeSquareColor(e);
-});
+squares().forEach(square => (
+  square.addEventListener('mousemove', (e) => {changeSquareColor(e)})
+))
