@@ -9,14 +9,17 @@
   </head>
   <body>
     <div class="left">
-      <button class="clear-grid-button" id="clearGridButton">Clear Grid</button>
-      <input type="range" name="grid" class="set-grid-input" id="setGridInput"/>
+      <div class="title">
+        <h1>Etch a Sketch</h1>
+      </div>
+      <div class="input-section">
+        <button class="clear-grid-button" id="clearGridButton">Clear Grid</button>
+        <input type="range" name="grid" class="set-grid-input" id="setGridInput"/>
+        <input type="color" name="color" class="set-color-input" id="setColorInput" />
+        <button class="rainbow-mode-button" id="rainbowModeButton"  />Rainbow Mode</button>
+      </div>
     </div>
     <div class="container"></div>
-    <div class="right">
-      <input type="color" name="color" class="color-input" id="colorInput" />
-      <button class="rainbow-mode-button" id="rainbowModeButton"  />Rainbow Mode</button>
-    </div>
   </body>
   <script src="script.js"></script>
 </html>
