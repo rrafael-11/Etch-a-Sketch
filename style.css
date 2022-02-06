@@ -3,12 +3,25 @@ html {
 }
 
 body {
+  background-color: hsl(203, 92%, 80%);
   margin: 0;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: monospace;
+  font-size: 16px;
+}
+
+.container {
+  background-color: #fff;
+  height: 625px;
+  width: 600px;
+  margin-right: 150px;
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(16, 1fr);
+  flex: 1 1 auto;
 }
 
 .left {
@@ -20,6 +33,7 @@ body {
 
 .title {
   text-align: center;
+  font-size: 1em;
 }
 
 .input-section {
@@ -29,16 +43,40 @@ body {
   align-items: center;
 }
 
-.container {
-  height: 625px;
-  width: 600px;
-  margin-right: 150px;
-  display: grid;
-  grid-template-columns: repeat(16, 1fr);
-  grid-template-rows: repeat(16, 1fr);
-  flex: 1 1 auto;
+button {
+  height: 35px;
+  width: 160px;
+  font-size: 16px;
 }
 
-.square {
-  background-color: lightskyblue;
+.input-container,
+button {
+  margin: 10px;
+}
+
+#input-color-container {
+  display: flex;
+  align-items: center;
+  background-color: #efefef;
+  border: 1px solid #767676;
+  width: 160px;
+}
+
+#input-range-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-color {
+  margin: 10px;
+  margin-left: auto;
+}
+
+.current-color {
+  margin-left: 25px;
+}
+
+.current-grid {
+  font-weight: 600;
 }
