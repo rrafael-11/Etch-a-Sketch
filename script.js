@@ -32,9 +32,11 @@ function changeSquareColor(e) {
   return (e.target.style.backgroundColor = inputColor());
 }
 
-squares().forEach((square) => {
-  square.addEventListener("mousemove", (e) => {
-    changeSquareColor(e);
+container.addEventListener("mouseenter", () => {
+  squares().forEach((square) => {
+    square.addEventListener("mousemove", (e) => {
+      changeSquareColor(e);
+    });
   });
 });
 
