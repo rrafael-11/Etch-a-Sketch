@@ -18,8 +18,8 @@
         <input type="range" name="gridSize" class="input-range" id="gridSize" value="16" min="4" max="64"/>
       </div>
       <div class="input-container" id="input-color-container">
-        <span class="current-color-txt" id="currentColorTxt">Black</span>
-        <input type="color" name="color" class="input-color" id="inputColor"/>
+        <span class="current-color-txt" id="currentColorTxt">#000000</span>
+        <input type="color" name="color" class="input-color" id="inputColor" onchange="updateColorText(inputColorValue())"/>
       </div>
       <button class="clear-grid-button" id="clearGridButton" onclick="clearGrid()">Clear Grid</button>
       <button class="rainbow-mode-button" id="rainbowModeButton" onclick="rainbowMode()">Rainbow Mode</button>
