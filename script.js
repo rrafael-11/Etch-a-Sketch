@@ -1,36 +1,44 @@
 let container = document.querySelector(".container");
 let inputGrid = document.querySelector("#gridSize");
 let currentGridTxt = document.querySelector("#currentGridTxt");
+let rainbowModeButton = document.querySelector('#rainbowModeButton')
+let isRainbowModeOn = false
 let squares = () => { return document.querySelectorAll(".square"); };
 let gridSize = () => { return document.querySelector("#gridSize").value; };
+let randomNum = () => { return Math.floor(Math.random() * 253) }
 let inputColor = () => { return document.querySelector("#inputColor").value; };
-let randomColor = () => {
-  let num1 = Math.floor(Math.random() * 253)
-  let num2 = Math.floor(Math.random() * 253)
-  let num3 = Math.floor(Math.random() * 253)
-
-  return `rgb(${num1}, ${num2}, ${num3})`
-}
-let isRainbowModeOn = false
-let currentColor = () => {return isRainbowModeOn ? randomColor() : inputColor()}
+let randomColor = () => { return `rgb(${randomNum()}, ${randomNum()}, ${randomNum()})` }
+let currentColor = () => { return isRainbowModeOn ? randomColor() : inputColor() }
 
 updateGrid(gridSize());
 
 function updateGrid(gridSize) {
   resetGrid();
-  container.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
-  container.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
-  for (var i = 0; i < gridSize * gridSize; i++) {
-    let square = document.createElement("div");
-    square.classList.add("square");
-    container.appendChild(square);
+  updateGridTemplate(gridSize)
+  generateSquares(gridSize)
+
+  function resetGrid() {
+    while (container.lastChild) {
+      container.lastChild.remove();
+    }
+  }
+
+  function updateGridTemplate() {
+    container.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
+    container.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
+  }
+
+  function generateSquares() {
+    for (var i = 0; i < gridSize * gridSize; i++) {
+      let square = document.createElement("div");
+      square.classList.add("square");
+      container.appendChild(square);
+    }
   }
 }
 
-function resetGrid() {
-  while (container.lastChild) {
-    container.lastChild.remove();
-  }
+function updateGridText(gridSize) {
+  return (currentGridTxt.textContent = `${gridSize}x${gridSize}`);
 }
 
 function clearGrid() {
@@ -60,8 +68,10 @@ container.addEventListener("mouseenter", () => {
 });
 
 inputGrid.addEventListener("mousedown", () => {
-  inputGrid.onmousemove = updateGridText;
-  inputGrid.onmouseup = () => { 
-    updateGrid(gridSize()); 
+  inputGrid.onmousemove = () => {
+    updateGridText(gridSize());
+  }
+  inputGrid.onmouseup = () => {
+    updateGrid(gridSize());
   };
 });
