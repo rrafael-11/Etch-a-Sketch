@@ -91,11 +91,11 @@ button {
   box-shadow: 3px 3px 3px  hsl(0, 0%, 60%);
 }
 
-.current-color {
+.current-color-txt {
   margin-left: 25px;
 }
 
-.current-grid {
+.current-grid-txt {
   font-weight: 600;
 }
 
