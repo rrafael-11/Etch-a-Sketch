@@ -15,15 +15,14 @@ body {
 
 .container {
   background-color: #fff;
-  border: 2px solid hsl(203, 92%, 90%);
+  border: 4px solid hsl(203, 92%, 90%);
   box-shadow: 12px 12px 10px 2px hsl(203, 92%, 60%);
   height: 625px;
   width: 625px;
-  margin-right: 150px;
+  margin-right: 300px;
   display: grid;
   grid-template-columns: repeat(16, 1fr);
   grid-template-rows: repeat(16, 1fr);
-  flex: 1 1 auto;
 }
 
 .left {
@@ -49,6 +48,7 @@ button {
   height: 35px;
   width: 160px;
   font-size: 16px;
+  transition: background-color 0.6s ease-in-out;
 }
 
 .input-container,
@@ -81,4 +81,8 @@ button {
 
 .current-grid {
   font-weight: 600;
+}
+
+.selected {
+  background-color: hsl(0, 0%, 84%);
 }

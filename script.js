@@ -49,6 +49,7 @@ function clearGrid() {
 
 function rainbowMode() {
   isRainbowModeOn = !isRainbowModeOn
+  rainbowModeButton.classList.toggle('selected')
 }
 
 function updateGridText() {
