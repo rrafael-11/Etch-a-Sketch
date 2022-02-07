@@ -1,14 +1,16 @@
 let container = document.querySelector(".container");
 let inputGrid = document.querySelector("#gridSize");
 let currentGridTxt = document.querySelector("#currentGridTxt");
+let currentColorTxt = document.querySelector('#currentColorTxt')
 let rainbowModeButton = document.querySelector('#rainbowModeButton')
 let isRainbowModeOn = false
+let inputColor = document.querySelector('#inputColor')
 let squares = () => { return document.querySelectorAll(".square"); };
 let gridSize = () => { return document.querySelector("#gridSize").value; };
 let randomNum = () => { return Math.floor(Math.random() * 253) }
-let inputColor = () => { return document.querySelector("#inputColor").value; };
 let randomColor = () => { return `rgb(${randomNum()}, ${randomNum()}, ${randomNum()})` }
-let currentColor = () => { return isRainbowModeOn ? randomColor() : inputColor() }
+let currentColor = () => { return isRainbowModeOn ? randomColor() : inputColorValue() }
+let inputColorValue = () => { return document.querySelector("#inputColor").value; };
 
 updateGrid(gridSize());
 
@@ -38,7 +40,11 @@ function updateGrid(gridSize) {
 }
 
 function updateGridText(gridSize) {
-  return (currentGridTxt.textContent = `${gridSize}x${gridSize}`);
+  return currentGridTxt.textContent = `${gridSize}x${gridSize}`;
+}
+
+function updateColorText(color) {
+  return currentColorTxt.textContent = color
 }
 
 function clearGrid() {
