@@ -48,7 +48,7 @@ button {
   height: 35px;
   width: 160px;
   font-size: 16px;
-  transition: background-color 0.6s ease-in-out;
+  transition: background-color 0.6s ease-in;
 }
 
 .input-container,
@@ -62,6 +62,7 @@ button {
   background-color: #efefef;
   border: 1px solid #767676;
   width: 160px;
+  overflow: hidden;
 }
 
 #input-range-container {
@@ -71,8 +72,23 @@ button {
 }
 
 .input-color {
+  -webkit-appearance: none;
   margin: 10px;
   margin-left: auto;
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  border: none;
+}
+
+.input-color::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.input-color::-webkit-color-swatch {
+  border: none;
+  border-radius: 50px;
+  box-shadow: 3px 3px 3px  hsl(0, 0%, 60%);
 }
 
 .current-color {
